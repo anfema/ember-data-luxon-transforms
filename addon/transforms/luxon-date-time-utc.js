@@ -11,10 +11,10 @@ export default Transform.extend({
   },
 
   serialize(deserialized) {
-    if (deserialized === null) {
+    if (!deserialized) {
       return deserialized;
     }
 
-    return deserialized.toISO();
+    return deserialized.toUTC().toISO();
   },
 });
